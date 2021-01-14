@@ -1,0 +1,22 @@
+hello: Hello
+notFoundScreen:
+  title: Page was not found, continue to homepage
+serverError:
+  500: Server error
+  429: Too many requests, try again later
+cookies:
+  cookiesMessage: 'This site uses cookies. By continuing on this site and clicking on the button, you agree to their use.'
+  moreInfo: 'More info'
+  agree: 'Agree'
+githubUsers:
+  list:
+    startSearch: 'For list start search'
+    noResults: 'No search results'
+
+repositories: Repositories
+followers: Followers
+usersList: Users list
+search: Search
+loginFail: Login failed, please try again later
+loginButton: Login over GitHub
+logout: Logout

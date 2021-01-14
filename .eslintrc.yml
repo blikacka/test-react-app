@@ -1,0 +1,121 @@
+env:
+  es6: true
+  mocha: true
+  browser: true
+  node: true
+  amd: true
+
+parser: "babel-eslint"
+
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
+
+plugins:
+  - "babel"
+
+rules:
+  no-warning-comments:
+    - "warn"
+    - terms: ["fixme"]
+      location: "anywhere"
+  brace-style: ["warn", '1tbs']
+  comma-dangle: ["warn", "always-multiline"]
+  complexity:
+    - "error"
+    - 10
+  curly: "warn"
+  no-eq-null: "error"
+  no-eval: "error"
+  no-implied-eval: "error"
+  prefer-promise-reject-errors: "error"
+  no-shadow: "error"
+  no-undefined: "error"
+  consistent-return: "error"
+  #no-use-before-define: "error"
+
+  # no_camelcased variables are used as api params
+  camelcase: [2, { "ignoreDestructuring": true, properties: "never" }]
+  dot-notation: ["error", { "allowPattern": "^[a-z]+(_[a-z]+)+$" }]
+
+  comma-style: ["error", "last"]
+  eol-last: ["error", "always"]
+  #id-blacklist: ["error", "data"]
+  max-params: ["error", 4]
+  #max-statements: ["error", 10]
+  no-duplicate-imports: ["error", { "includeExports": true }]
+  indent: ["error", 4, {SwitchCase: 1}]
+
+  # 2 - turn the rule on as an error (exit code is 1 when triggered)
+  react/jsx-uses-vars: [2]
+  react/display-name: "off"
+  react/no-access-state-in-setstate: warn
+  react/no-deprecated: warn
+  #react/no-array-index-key: warn
+  react/no-adjacent-inline-elements: warn
+  react/no-danger: warn
+  react/no-multi-comp: warn
+  react/no-redundant-should-component-update: error
+  react/no-typos: warn
+  react/no-unsafe: error
+  react/no-unused-prop-types: warn
+  react/no-unused-state: warn
+  react/no-will-update-set-state: warn
+  react/prefer-es6-class:
+    - warn
+    - always
+  react/prefer-read-only-props: warn
+  react/jsx-max-depth:
+    - warn
+    - max: 9
+
+  react/prop-types: "off"
+
+  semi: ["error", "never"]
+
+  babel/no-invalid-this: 1
+  babel/no-unused-expressions: 1
+  babel/valid-typeof: 1
+
+  quotes: ["error", "single", { "avoidEscape": true }]
+
+  object-curly-spacing: ["error", "always", { "arraysInObjects": true, "objectsInObjects": true }]
+  object-curly-newline: ["error", { minProperties: 2, consistent: true }]
+  object-property-newline: "error"
+
+  arrow-body-style: ["error", "as-needed"]
+  arrow-parens: ["error", "as-needed"]
+  no-var: "error"
+  no-useless-rename: ["error", { ignoreExport: true, ignoreDestructuring: true }]
+  prefer-numeric-literals: "error"
+
+  no-extra-boolean-cast: "error"
+  no-trailing-spaces: ["error", { ignoreComments: true }]
+
+  max-lines: ["error", { max: 300, skipComments: true, skipBlankLines: true }]
+
+  no-async-promise-executor: "error"
+  no-await-in-loop: "error"
+  # https://eslint.org/docs/rules/no-prototype-builtins
+  no-prototype-builtins: "error"
+
+parserOptions:
+  ecmaVersion: 6
+  sourceType: "module"
+  ecmaFeatures:
+    classes: true
+    experimentalObjectRestSpread : true
+    jsx: true
+    legacyDecorators: true
+
+settings:
+  react:
+    pragma: React
+    version: 16.2.0
+
+globals:
+  document: true
+  window: true
+  moment: true
+  jquery: true
+  jQuery: true

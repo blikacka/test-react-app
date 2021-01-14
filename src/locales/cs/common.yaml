@@ -1,0 +1,22 @@
+hello: Ahoj
+notFoundScreen:
+  title: Stránka nenalazena, pokračujte na úvod
+serverError:
+  500: Chyba serveru
+  429: Příliš mnoho požadavků, opakujte později
+cookies:
+  cookiesMessage: 'Tyto stránky používají cookies. Setrváním na těchto stránkách a kliknutím na tlačítko potvrdit vyjadřujete souhlas s jejich používáním.'
+  moreInfo: 'Více informací'
+  agree: 'Rozumím'
+githubUsers:
+  list:
+    startSearch: 'Pro výpis začněte vyhledávat'
+    noResults: 'Žádné výsledky hledání'
+
+repositories: Repozitáře
+followers: Sledující
+usersList: Seznam uživatelů
+search: Vyhledávat
+loginFail: Nepovedlo se přihlásit, zkuste to znovu za chvíli
+loginButton: Přihlásit se pomocí GitHubu
+logout: Odhlásit se

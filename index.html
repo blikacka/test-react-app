@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="no-js" lang="<%= LANGUAGE %>">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="robots" content="<%= ROBOTS %>">
+
+        <title><%= TITLE %> | <%= DESCRIPTION %></title>
+        <meta property="og:title" content="<%= TITLE %>" data-react-helmet="true">
+        <meta name="twitter:title" content="<%= TITLE %>" data-react-helmet="true">
+        <meta name="description" content="<%= DESCRIPTION %>" data-react-helmet="true">
+        <meta property="og:description" content="<%= DESCRIPTION %>" data-react-helmet="true">
+        <meta name="twitter:description" content="<%= DESCRIPTION %>" data-react-helmet="true">
+        <meta name="apple-mobile-web-app-title" content="<%= TITLE %>">
+        <meta name="author" content="<%= TITLE %>">
+        <meta name="twitter:site" content="<%= TITLE %>" data-react-helmet="true">
+        <meta name="application-name" content="<%= TITLE %>" data-react-helmet="true">
+        <meta property="og:site_name" content="<%= TITLE %>">
+        <meta property="og:url" content="<%= FRONTEND_URL %>" data-react-helmet="true">
+        <meta property="og:type" content="product" data-react-helmet="true">
+        <meta name="twitter:card" content="summary_large_image" data-react-helmet="true">
+
+        <meta property="og:image:width" content="1450" data-react-helmet="true">
+        <meta property="og:image:height" content="800" data-react-helmet="true">
+        <meta property="og:image" content="<%= FRONTEND_URL %>/images/cover.jpg?v<%= VERSION %>" data-react-helmet="true">
+        <meta name="twitter:image" content="<%= FRONTEND_URL %>/images/cover.jpg?v<%= VERSION %>" data-react-helmet="true">
+        <meta itemprop="image" content="<%= FRONTEND_URL %>/images/cover.jpg?v<%= VERSION %>" data-react-helmet="true">
+
+        <meta name="theme-color" content="#000000">
+
+        <link rel="preload" href="/images/loader.svg" as="image">
+        <link rel="shortcut icon" href="/images/favicon.ico?v<%= VERSION %>" type="image/x-icon">
+    </head>
+    <body class="d-flex flex-column"
+          id="platform-body"
+          data-version="<%= VERSION %>"
+          data-platform="<%= PLATFORM %>"
+          data-frontend-url="<%= FRONTEND_URL %>"
+          data-github-graph-url="<%= GITHUB_GRAPH_URL %>"
+          data-github-client-id="<%= GITHUB_CLIENT_ID %>"
+          data-github-client-secret="<%= GITHUB_CLIENT_SECRET %>"
+    >
+        <noscript>
+            Pro běh této aplikace musíte mít zapnutý JavaScript. <br />
+            You need to enable JavaScript to run this app.
+        </noscript>
+
+        <div class="update-browser" id="update-browser" style="display: none;">
+            <div class="update-browser__top">
+                <div id="update-browser-ie-normal">Váš současný webový prohlížeč Internet Explorer není podporován.</div>
+                <div class="update-browser__ie11" id="update-browser-ie11" style="display: none;">
+                    V současné době webový prohlížeč Internet Explorer 11 není podporován
+                </div>
+            </div>
+            <div class="update-browser__bottom">
+                <p>Pro bezproblémové využití všech funkcí portálu,<br /> doporučujeme přejít na jeden z těchto prohlížečů.</p>
+
+                <div class="update-browser__browsers">
+                    <div class="update-browser__browser">
+                        <img src="/images/browser/chrome.png" alt="chrome" /><br />
+                        <a class="update-browser__link" href="https://www.google.com/chrome/">Google Chrome</a>
+                    </div>
+                    <div class="update-browser__browser">
+                        <img src="/images/browser/safari.png" alt="safari" /><br />
+                        <a class="update-browser__link" href="https://www.apple.com/lae/safari/">Safari</a>
+                    </div>
+                    <div class="update-browser__browser">
+                        <img src="/images/browser/firefox.png" alt="firefox" /><br />
+                        <a class="update-browser__link" href="https://www.mozilla.cz/">Mozilla Firefox</a>
+                    </div>
+                    <div class="update-browser__browser">
+                        <img src="/images/browser/opera.png" alt="opera" /><br />
+                        <a class="update-browser__link" href="http://www.opera.com/">Opera</a>
+                    </div>
+                    <div class="update-browser__browser">
+                        <img src="/images/browser/edge.png" alt="edge" /><br />
+                        <a class="update-browser__link" href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="app" class="app">
+            <div class="d-flex justify-content-center align-items-center flex-column flex-1 root-preloader__container">
+                <div class="w-80">
+                    <div class="root-preloader__progress-preload" style="left: 50%; margin: 0; position: absolute; text-align: center; top: 50%; transform: translate(-50%, -50%);">
+                        <img src="/images/loader.svg" alt="Načítání..." />
+                        <div style="margin-top: 10px;">Načítání...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-root"></div>
+        <div id="alert-container"></div>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css?v<%= VERSION %>" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/app-<%= PLATFORM %>.min.css?v<%= VERSION %>" type='text/css'>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+        <script type="text/javascript" id="indexscript" src="/js/app-<%= PLATFORM %>.js?v<%= VERSION %>"></script>
+    </body>
+</html>

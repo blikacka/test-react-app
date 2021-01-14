@@ -1,0 +1,33 @@
+$color-white: #FFF;
+$color-black: #000;
+
+@import "cookies";
+@import "loader";
+
+.nav-base {
+  height: 40px;
+}
+
+.cursor-pointer-opacity {
+  cursor: pointer;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.vertically-center-lg {
+  @media (min-width: 767px) {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+}
+
+.center-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

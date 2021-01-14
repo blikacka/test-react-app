@@ -1,0 +1,83 @@
+.Cookies-box {
+  &__container {
+    align-content: center;
+    align-items: center;
+    background: $color-black;
+    bottom: 0;
+    color: $color-white;
+    display: flex;
+    font-size: 10px;
+    flex-flow: row wrap;
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  &__more-info {
+    padding-left: 10px;
+  }
+
+  &__text {
+    line-height: 22px;
+  }
+
+  &__link {
+    color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__modal {
+    &-box {
+      background: rgba($color-black, .9);
+      color: $color-black;
+      font-size: 12px;
+      height: 100%;
+      left: 0;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+    }
+
+    &-content {
+      background: $color-white;
+      left: 50%;
+      max-height: 80%;
+      max-width: 700px;
+      overflow-y: auto;
+      padding: 25px;
+      position: fixed;
+      text-align: justify;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+    }
+
+    &-title {
+      font-weight: bold;
+    }
+
+    &-close {
+      &-cross {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+
+        &:hover {
+          cursor: pointer;
+          opacity: .8;
+        }
+      }
+
+      &-button {
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
