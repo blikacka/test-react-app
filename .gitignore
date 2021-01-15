@@ -34,3 +34,6 @@ public/index.html
 public/robots.txt
 src/locales/cs/generated/*
 src/locales/en/generated/*
+
+.firebase/*
+.firebaserc
