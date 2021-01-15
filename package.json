@@ -127,6 +127,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "gulp production"
+    "build": "gulp production",
+    "test": "jest --ci"
   }
 }

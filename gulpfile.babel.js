@@ -22,7 +22,6 @@ const yaml = require('js-yaml')
 const fs = require('fs')
 const gulpYaml = require('gulp-yaml')
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
-const OfflinePlugin = require('offline-plugin')
 const HappyPack = require('happypack')
 
 const port = 8081
@@ -200,11 +199,6 @@ gulp.task('js', () => {
                 test: /\.jsx?|\.js?$/,
                 columns: true,
             }),
-            new OfflinePlugin({
-                externals: ['/'],
-                appShell: '/',
-                autoUpdate: 1000 * 60 * 30,
-            }),
         ])
     }
 
@@ -295,9 +289,10 @@ const loadDevStream = (stream, language) => {
 const htmlMinFunction = language => {
     let stream = gulp.src(['*.html'])
 
-    if (development) {
+    // @TODO - now is build running locally, on CI deploy is unwanted pass local variables
+    // if (development) {
         stream = loadDevStream(stream, language.replace('/', '').replace('/', ''))
-    }
+    // }
 
     return stream
         .pipe(htmlmin({

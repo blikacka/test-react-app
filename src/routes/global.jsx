@@ -23,10 +23,10 @@ export default class GlobalRoutes extends Component {
     render = () => (
         <Suspense fallback={<span />}>
             <Switch>
+                <Route exact path={'/login'} render={() => <AppContainer><Login {...this.props} /></AppContainer>} />
                 <Route exact path={'/'} render={() => <AppContainer><Index {...this.props} /></AppContainer>} />
                 <Route exact path={'/:user'} render={() => <AppContainer><Index {...this.props} /></AppContainer>} />
                 <Route exact path={'/:user/:tab'} render={() => <AppContainer><Index {...this.props} /></AppContainer>} />
-                <Route exact path={'/login'} render={() => <AppContainer><Login {...this.props} /></AppContainer>} />
 
                 <NotFoundRoute routesType="globalRoutes" />
             </Switch>
