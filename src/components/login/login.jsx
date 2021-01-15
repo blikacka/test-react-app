@@ -45,7 +45,7 @@ class Login extends Configurator {
 
         return (
             <div className="center-center">
-                <a href={`https://github.com/login/oauth/authorize?client_id=${clientId}`} className="btn btn-success">
+                <a href={`https://github.com/login/oauth/authorize?client_id=${clientId}&scope=user`} className="btn btn-success">
                     {t('loginButton')}
                 </a>
             </div>
