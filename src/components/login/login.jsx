@@ -1,9 +1,4 @@
 import React from 'react'
-import LoginGithub from 'react-login-github'
-import {
-    setAccessToken,
-    setAuthToken,
-} from '../../reducers/actions/auth'
 import { Redirect } from 'react-router'
 import {
     i18n,
@@ -38,7 +33,6 @@ class Login extends Configurator {
 
         const {
             REACT_APP_GITHUB_CLIENT_ID: clientId,
-            REACT_APP_GITHUB_CLIENT_SECRET: clientSecret,
         } = this.config
 
         const {
@@ -51,26 +45,9 @@ class Login extends Configurator {
 
         return (
             <div className="center-center">
-                <LoginGithub
-                    buttonText={t('loginButton')}
-                    clientId={clientId}
-                    onSuccess={data => {
-                        setAuthToken(data.code)
-                            .then(token => {
-                                const fullUrl = `https://astrumq.com/githubAccessToken.php?client_id=${clientId}&client_secret=${clientSecret}&code=${token}`
-
-                                return window.axios.post(fullUrl)
-                                    .then(response => {
-                                        const accessToken = response.data.split('&')[0].split('=')[1]
-
-                                        return setAccessToken(accessToken)
-                                    })
-                            })
-                            .then(() => this.setState({ logged: true }))
-                            .then(() => window.location.reload())
-                    }}
-                    onFailure={() => window.swalert(t('loginFail', 'danger'))}
-                />
+                <a href={`https://github.com/login/oauth/authorize?client_id=${clientId}`} className="btn btn-success">
+                    {t('loginButton')}
+                </a>
             </div>
         )
     }
