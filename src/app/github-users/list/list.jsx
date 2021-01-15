@@ -5,7 +5,10 @@ import {
     withRouterConnectWrapper,
 } from '../../../validator'
 import OverlayLoader from '../../../components/shared/overlay-loader'
-import { setUsersBusy, setUsersData } from '../../../reducers/actions/users'
+import {
+    setUsersBusy,
+    setUsersData,
+} from '../../../reducers/actions/users'
 import ListRow from './list-row'
 import { gql } from '@apollo/client'
 import { apolloWrapper } from '../../../components/shared/apollo-wrapper'
@@ -120,7 +123,7 @@ class List extends Configurator {
             modalUser,
         } = this.state
 
-        if (!modalOpen && !searchString || searchString === '') {
+        if (!modalOpen && (!searchString || searchString === '')) {
             return (
                 <div>
                     {t('githubUsers.list.startSearch')}
